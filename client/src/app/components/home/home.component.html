@@ -17,6 +17,10 @@
             <mat-icon>people</mat-icon>
             <span>Comments management</span>
           </button>
+          <button autotest-id="PackagesManagement" mat-menu-item (click)="packagesManagement()">
+            <mat-icon>people</mat-icon>
+            <span>Packages management</span>
+          </button>
           <button *ngIf="authService.currentUserValue.userRole == 'UserManager'" autotest-id="userManagement" mat-menu-item (click)="userManagement()">
             <mat-icon>people</mat-icon>
             <span>User management</span>

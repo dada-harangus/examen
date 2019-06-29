@@ -100,8 +100,9 @@ namespace Lab2Expense
             services.AddScoped<IUsersService, UsersService>();
             services.AddScoped<IRegisterValidator, RegisterValidator>();
             services.AddScoped<IUserRoleService, UserRoleService>();
-        }
+            services.AddScoped<IPackageService, PackageService>();
 
+        }
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
         public void Configure(IApplicationBuilder app, IHostingEnvironment env)
         {

@@ -14,6 +14,7 @@ import { ExpensesComponent } from './components/expenses/expenses.component';
 import { HomeComponent } from './components/home/home.component';
 import { UsersComponent } from './components/users/users/users.component';
 import { CommentsComponent } from './components/comments/comments.component';
+import { PackageComponent } from './components/package/package.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -22,7 +23,8 @@ import { CommentsComponent } from './components/comments/comments.component';
     ExpensesComponent,
     HomeComponent,
     UsersComponent,
-    CommentsComponent
+    CommentsComponent,
+    PackageComponent
   ],
   imports: [
     BrowserModule,

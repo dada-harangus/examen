@@ -1,0 +1,89 @@
+<table *ngIf="packages !== null" mat-table [dataSource]="activePageDataChunk" class="mat-elevation-z8">
+
+  <!--- Note that these columns can be defined in any order.
+        The actual rendered columns are set as a property on the row definition" -->
+
+
+  <!-- Position Column -->
+  <ng-container matColumnDef="id">
+    <th mat-header-cell *matHeaderCellDef> id</th>
+    <td mat-cell *matCellDef="let element"> {{element.id}} </td>
+  </ng-container>
+  <ng-container matColumnDef="CountryExpedition">
+    <th mat-header-cell *matHeaderCellDef> countryExpedition</th>
+    <td mat-cell *matCellDef="let element"> {{element.countryExpedition}} </td>
+  </ng-container>
+  <!-- Name Column -->
+  <ng-container matColumnDef="CountryDestination">
+    <th mat-header-cell *matHeaderCellDef> countryDestination</th>
+    <td mat-cell *matCellDef="let element"> {{element.countryDestination}} </td>
+  </ng-container>
+
+  <!-- Symbol Column -->
+  <ng-container matColumnDef="Sender">
+    <th mat-header-cell *matHeaderCellDef> Sender</th>
+    <td mat-cell *matCellDef="let element"> {{element.sender}} </td>
+  </ng-container>
+  <ng-container matColumnDef="Receiver">
+    <th mat-header-cell *matHeaderCellDef> receiver</th>
+    <td mat-cell *matCellDef="let element"> {{element.receiver}} </td>
+  </ng-container>
+  <ng-container matColumnDef="Adress">
+    <th mat-header-cell *matHeaderCellDef> adress</th>
+    <td mat-cell *matCellDef="let element"> {{element.adress}} </td>
+  </ng-container>
+  <ng-container matColumnDef="Cost">
+    <th mat-header-cell *matHeaderCellDef> cost</th>
+    <td mat-cell *matCellDef="let element"> {{element.cost}} </td>
+  </ng-container>
+  <ng-container matColumnDef="Tracking">
+    <th mat-header-cell *matHeaderCellDef> tracking</th>
+    <td mat-cell *matCellDef="let element"> {{element.tracking}} </td>
+  </ng-container>
+
+  <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+  <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+</table>
+<mat-paginator [length]="length" [pageSize]="pageSize" [pageSizeOptions]="pageSizeOptions"
+               (page)="onPageChanged($event)">
+</mat-paginator>
+<div class="container-exemple">
+  <mat-form-field>
+    <input matInput placeholder="Expeditor" [(ngModel)]="expeditor">
+
+  </mat-form-field>
+  <button mat-raised-button color="primary" (click)="FilterType()">
+    Filter type
+  </button>
+
+  <button mat-raised-button color="primary" (click)="Filtru()">
+    Filter dupa destinatatie
+  </button>
+</div>
+<table *ngIf="destinations !== null" mat-table [dataSource]="activePageDataChunk" class="mat-elevation-z8">
+
+  <!--- Note that these columns can be defined in any order.
+        The actual rendered columns are set as a property on the row definition" -->
+  <ng-container matColumnDef="id">
+    <th mat-header-cell *matHeaderCellDef> id</th>
+    <td mat-cell *matCellDef="let element"> {{element.id}} </td>
+  </ng-container>
+
+  <!-- Position Column -->
+  <ng-container matColumnDef="name">
+    <th mat-header-cell *matHeaderCellDef>name</th>
+    <td mat-cell *matCellDef="let element"> {{element.name}} </td>
+  </ng-container>
+  <ng-container matColumnDef="cost">
+    <th mat-header-cell *matHeaderCellDef> cost</th>
+    <td mat-cell *matCellDef="let element"> {{element.cost}} </td>
+  </ng-container>
+  <!-- Name Column -->
+
+
+  <tr mat-header-row *matHeaderRowDef="displayedColumns1"></tr>
+  <tr mat-row *matRowDef="let row; columns: displayedColumns1;"></tr>
+</table>
+<mat-paginator [length]="length" [pageSize]="pageSize" [pageSizeOptions]="pageSizeOptions"
+               (page)="onPageChanged($event)">
+</mat-paginator>

@@ -14,13 +14,18 @@ namespace Lab2Expense.Models
 
         protected override void OnModelCreating(ModelBuilder builder)
         {
-            builder.Entity<User>(entity => {
+            builder.Entity<User>(entity =>
+            {
                 entity.HasIndex(u => u.Username).IsUnique();
             });
             builder.Entity<Comment>()
                 .HasOne(f => f.Expense)
                 .WithMany(c => c.Comments)
                 .OnDelete(DeleteBehavior.Cascade);
+            builder.Entity<Package>(entity =>
+            {
+                entity.HasIndex(u => u.Tracking).IsUnique();
+            });
         }
 
         public DbSet<Expense> Expenses { get; set; }
@@ -28,5 +33,7 @@ namespace Lab2Expense.Models
         public DbSet<User> Users { get; set; }
         public DbSet<UserRole> UserRole { get; set; }
         public DbSet<UserUserRole> UserUserRole { get; set; }
+        public DbSet<Package> Packages { get; set; }
+
     }
 }

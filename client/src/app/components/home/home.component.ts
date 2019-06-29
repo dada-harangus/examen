@@ -46,4 +46,8 @@ export class HomeComponent implements OnInit {
   commentsManagement() {
     this.router.navigate(['/comments']);
   }
+
+  packagesManagement() {
+    this.router.navigate(['/packages']);
+  }
 }

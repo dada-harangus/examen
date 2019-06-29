@@ -7,6 +7,7 @@ import {ExpensesComponent} from './components/expenses/expenses.component';
 import {HomeComponent} from './components/home/home.component';
 import {UsersComponent} from './components/users/users/users.component';
 import {CommentsComponent} from './components/comments/comments.component';
+import {PackageComponent} from './components/package/package.component';
 
 const routes: Routes = [
   {
@@ -39,6 +40,10 @@ const routes: Routes = [
   {
     path: 'comments',
     component: CommentsComponent
+  },
+  {
+    path: 'packages',
+    component: PackageComponent
   }
 ];
 
